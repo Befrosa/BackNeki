@@ -26,7 +26,7 @@ public class UserInserir {
 	}
 	public UserInserir(UserModel user) {
 		super();
-		this.id = user.getId();
+		this.id = user.getId_user();
 		this.last_login_date = user.getLast_login_date();
 		this.login = user.getLogin();
 		this.password = user.getPassword();
