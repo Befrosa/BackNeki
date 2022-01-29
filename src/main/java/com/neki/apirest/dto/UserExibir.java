@@ -2,7 +2,7 @@ package com.neki.apirest.dto;
 
 import java.util.Date;
 
-import com.neki.apirest.entities.UserModel;
+import com.neki.apirest.entity.UserModel;
 
 public class UserExibir {
 			

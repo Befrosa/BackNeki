@@ -1,4 +1,4 @@
-package com.neki.apirest.entities;
+package com.neki.apirest.entity;
 
 import java.sql.Date;
 import java.util.Objects;
@@ -32,12 +32,12 @@ public class UserModel {
 	@Column(name = "last_login_date")
 	private Date last_login_date;
 
-	public long getId() {
+	public long getId_user() {
 		return id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setId_user(long id_user) {
+		this.id = id_user;
 	}
 
 	public String getLogin() {
@@ -66,13 +66,13 @@ public class UserModel {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", login=" + login + ", password=" + password + ", last_login_date=" + last_login_date
-				+ "]";
+		return "UserModel [id_user=" + id + ", login=" + login + ", password=" + password + ", last_login_date="
+				+ last_login_date + "]";
 	}
 
-	public UserModel(long id, String login, String password, Date last_login_date) {
+	public UserModel(long id_user, String login, String password, Date last_login_date) {
 		super();
-		this.id = id;
+		this.id = id_user;
 		this.login = login;
 		this.password = password;
 		this.last_login_date = last_login_date;
@@ -82,25 +82,6 @@ public class UserModel {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, last_login_date, login, password);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		UserModel other = (UserModel) obj;
-		return id == other.id && Objects.equals(last_login_date, other.last_login_date)
-				&& Objects.equals(login, other.login) && Objects.equals(password, other.password);
-	}
-
 
 	
 	}

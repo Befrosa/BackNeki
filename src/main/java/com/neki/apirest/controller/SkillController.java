@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.neki.apirest.entities.Skill;
+import com.neki.apirest.entity.Skill;
 import com.neki.apirest.repository.SkillRepository;
 
 import io.swagger.annotations.Api;

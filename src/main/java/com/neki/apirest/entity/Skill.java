@@ -1,4 +1,4 @@
-package com.neki.apirest.entities;
+package com.neki.apirest.entity;
 
 
 import java.util.ArrayList;

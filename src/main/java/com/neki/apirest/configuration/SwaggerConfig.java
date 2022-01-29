@@ -18,10 +18,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
 
 	@Bean
-	public Docket alunoApi() {
+	public Docket Api() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.any())
+				.apis(RequestHandlerSelectors.basePackage("com.neki.apirest"))
 				.paths(PathSelectors.any())
 				.build()
 				.apiInfo(metaInfo());
@@ -30,11 +30,11 @@ public class SwaggerConfig {
 
 	private ApiInfo metaInfo() {
 		ApiInfo apiInfo = new ApiInfo(
-				"Ecommerce API REST",
-				"API REST Ecommerce",
+				"Neki API REST",
+				"API REST para Neki",
 				"1.0",
 				"Terms of service",
-				new Contact ("Grupo 2 Serrablocks", "Serrablocks.com","https://serrablocks.netlify.app" ),
+				new Contact ("Bernardo Furtado","Bernardo.furtado@aol.com", "https://www.neki-it.com.br/" ),
 				"Apache License Version 2.0","Https://apache.org/license.html",
 				new ArrayList<VendorExtension>()
 				);
