@@ -4,6 +4,8 @@ package com.neki.apirest.configuration;
 import java.util.ArrayList;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -23,8 +25,7 @@ public class SwaggerConfig {
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.neki.apirest"))
 				.paths(PathSelectors.any())
-				.build()
-				.apiInfo(metaInfo());
+				.build();
 		
 	}
 
