@@ -9,8 +9,10 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
+
 
 import com.neki.apirest.dto.UserExibir;
 import com.neki.apirest.dto.UserInserir;
@@ -21,7 +23,7 @@ import com.neki.apirest.repository.UserRepository;
 @Service
 public class UserService {
 	
-
+	
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -43,7 +45,8 @@ public class UserService {
 	public UserExibir criarUser(UserInserir userInserir) {
 		UserModel userModel = new UserModel();
 		userModel.setLogin(userInserir.getLogin());
-		userModel.setPassword(userInserir.getPassword());
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		userModel.setPassword(passwordEncoder.encode(userInserir.getPassword()));
 		userModel.setLast_login_date(LocalDate.now());
 		userModel = userRepository.save(userModel);
 		return new UserExibir(userModel);

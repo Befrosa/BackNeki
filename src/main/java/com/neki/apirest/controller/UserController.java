@@ -50,15 +50,7 @@ public class UserController {
 		List<UserModel> user = userService.findAll();
 		return ResponseEntity.ok(user);
 	}
-	
-//	@GetMapping("/user/{id}")
-//	@ApiOperation(value = "Retorna um Usuario")
-//	public ResponseEntity<Optional<UserExibir>>buscarUser(@PathVariable(value = "id") Long id) {
-//
-//		return UserService.UserExibir(id) ;
-//	}
-
-	
+		
 	@PostMapping("/user")
 	@ApiOperation(value="Metodo para criar um usuarios")
 	public UserExibir create(@RequestBody UserInserir userInserir) {
@@ -66,5 +58,7 @@ public class UserController {
 		return userExibir;
 		
 	}
+	
+//	@DeleteMapping("/user")
 }
 	
