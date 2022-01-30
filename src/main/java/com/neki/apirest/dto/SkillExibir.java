@@ -1,7 +1,6 @@
 package com.neki.apirest.dto;
 
 import com.neki.apirest.entity.Skill;
-import com.neki.apirest.entity.UserModel;
 
 public class SkillExibir {
 	

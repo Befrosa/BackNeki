@@ -1,19 +1,14 @@
 package com.neki.apirest.service;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.neki.apirest.dto.SkillExibir;
 import com.neki.apirest.dto.SkillInserir;
-import com.neki.apirest.dto.UserExibir;
-import com.neki.apirest.dto.UserInserir;
 import com.neki.apirest.entity.Skill;
-import com.neki.apirest.entity.UserModel;
 import com.neki.apirest.repository.SkillRepository;
 
 @Service

@@ -1,8 +1,6 @@
 package com.neki.apirest.dto;
 
 import java.time.LocalDate;
-import java.util.Date;
-
 import com.neki.apirest.entity.UserModel;
 
 public class UserExibir {

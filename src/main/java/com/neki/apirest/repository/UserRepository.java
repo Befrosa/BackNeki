@@ -2,10 +2,7 @@ package com.neki.apirest.repository;
 
 import java.util.Optional;
 
-import javax.validation.Valid;
 
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +17,7 @@ public interface UserRepository extends JpaRepository<UserModel, Long>{
 
 	void deleteById(Long id);
 	
+	public UserModel findByLogin(String login);
 	
 	
 }
