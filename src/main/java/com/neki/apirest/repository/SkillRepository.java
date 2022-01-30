@@ -9,4 +9,9 @@ import com.neki.apirest.entity.Skill;
 public interface SkillRepository extends JpaRepository<Skill, Long>{
 
 	Optional<Skill> findById(Long id);
+
+	boolean existsById(Long id);
+
+	void deleteById(Long id);
+	
 }

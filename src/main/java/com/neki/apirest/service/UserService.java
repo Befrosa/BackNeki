@@ -51,14 +51,29 @@ public class UserService {
 		userModel = userRepository.save(userModel);
 		return new UserExibir(userModel);
 	}
-
-
-
-
 	
-
-
+	public boolean deleteUser(Long id) {
+		if (!userRepository.existsById(id)) {
+		return false;	
+		}
+		userRepository.deleteById(id);
+		return true;
+	}
 	
+	public UserExibir atualizarUser(Long id, UserInserir userInserir) {
+		UserModel userModel = new UserModel();
+		if(!userRepository.existsById(id)) {
+			return null;
+		}
+		userModel.setId(id);
+		userModel.setLogin(userInserir.getLogin());
+		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+		userModel.setPassword(passwordEncoder.encode(userInserir.getPassword()));
+		userModel.setLast_login_date(LocalDate.now());
+		userModel = userRepository.save(userModel);
+		return new UserExibir(userModel);
+	}
+
 	
 }
 

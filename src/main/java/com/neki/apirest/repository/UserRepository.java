@@ -20,6 +20,6 @@ public interface UserRepository extends JpaRepository<UserModel, Long>{
 
 	void deleteById(Long id);
 	
-	Pageable firstPageWithTwoElements = PageRequest.of(0, 14);
+	
 	
 }
