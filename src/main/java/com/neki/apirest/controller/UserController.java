@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.neki.apirest.dto.UserExibir;
+import com.neki.apirest.dto.UserInserir;
 import com.neki.apirest.entity.UserModel;
 import com.neki.apirest.repository.UserRepository;
 import com.neki.apirest.service.UserService;
@@ -60,15 +61,10 @@ public class UserController {
 	
 	@PostMapping("/user")
 	@ApiOperation(value="Metodo para criar um usuarios")
-	public UserModel create(@RequestBody UserModel userModel) {
-		return userRepository.save(userModel);
+	public UserExibir create(@RequestBody UserInserir userInserir) {
+			UserExibir userExibir = userService.criarUser(userInserir);
+		return userExibir;
 		
 	}
-//	@PostMapping("/user")
-//	@ApiOperation(value = "Metodo para criar usuario")
-//	public UserModel criaProduto(@RequestBody UserModel userModel) {
-//		return UserService.createUser(userModel);
-//
-//	}
-	
 }
+	

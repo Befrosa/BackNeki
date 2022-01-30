@@ -1,5 +1,6 @@
 package com.neki.apirest.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.neki.apirest.dto.UserExibir;
+import com.neki.apirest.dto.UserInserir;
 import com.neki.apirest.entity.UserModel;
 import com.neki.apirest.repository.UserRepository;
 
@@ -38,6 +40,14 @@ public class UserService {
 		return userExibirDto;
 	}
 	
+	public UserExibir criarUser(UserInserir userInserir) {
+		UserModel userModel = new UserModel();
+		userModel.setLogin(userInserir.getLogin());
+		userModel.setPassword(userInserir.getPassword());
+		userModel.setLast_login_date(LocalDate.now());
+		userModel = userRepository.save(userModel);
+		return new UserExibir(userModel);
+	}
 
 
 

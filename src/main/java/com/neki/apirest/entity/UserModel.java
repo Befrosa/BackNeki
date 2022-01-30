@@ -1,7 +1,8 @@
 package com.neki.apirest.entity;
 
-import java.sql.Date;
-import java.util.Objects;
+
+import java.time.LocalDate;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,14 +31,14 @@ public class UserModel {
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	@Column(name = "last_login_date")
-	private Date last_login_date;
+	private LocalDate last_login_date;
 
-	public long getId_user() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId_user(long id_user) {
-		this.id = id_user;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getLogin() {
@@ -56,23 +57,23 @@ public class UserModel {
 		this.password = password;
 	}
 
-	public Date getLast_login_date() {
+	public LocalDate getLast_login_date() {
 		return last_login_date;
 	}
 
-	public void setLast_login_date(Date last_login_date) {
-		this.last_login_date = last_login_date;
+	public void setLast_login_date(LocalDate localDate) {
+		this.last_login_date = localDate;
 	}
 
 	@Override
 	public String toString() {
-		return "UserModel [id_user=" + id + ", login=" + login + ", password=" + password + ", last_login_date="
+		return "UserModel [id=" + id + ", login=" + login + ", password=" + password + ", last_login_date="
 				+ last_login_date + "]";
 	}
 
-	public UserModel(long id_user, String login, String password, Date last_login_date) {
+	public UserModel(long id, String login, String password, LocalDate last_login_date) {
 		super();
-		this.id = id_user;
+		this.id = id;
 		this.login = login;
 		this.password = password;
 		this.last_login_date = last_login_date;
@@ -82,6 +83,8 @@ public class UserModel {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+
+	
 
 	
 	}
